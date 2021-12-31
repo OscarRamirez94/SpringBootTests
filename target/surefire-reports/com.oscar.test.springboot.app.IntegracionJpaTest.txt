@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.oscar.test.springboot.app.IntegracionJpaTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.858 s <<< FAILURE! - in com.oscar.test.springboot.app.IntegracionJpaTest
+testFindByPersona  Time elapsed: 0.086 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.oscar.test.springboot.app.IntegracionJpaTest.testFindByPersona(IntegracionJpaTest.java:31)
+
+testFindById  Time elapsed: 0.018 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Andrés> but was: <AndrÃ©s>
+	at com.oscar.test.springboot.app.IntegracionJpaTest.testFindById(IntegracionJpaTest.java:25)
+

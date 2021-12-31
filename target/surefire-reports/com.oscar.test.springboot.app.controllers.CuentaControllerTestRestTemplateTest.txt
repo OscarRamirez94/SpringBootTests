@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.oscar.test.springboot.app.controllers.CuentaControllerTestRestTemplateTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 10.582 s <<< FAILURE! - in com.oscar.test.springboot.app.controllers.CuentaControllerTestRestTemplateTest
+testDetalle  Time elapsed: 0.027 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Andrés> but was: <AndrÃ©s>
+	at com.oscar.test.springboot.app.controllers.CuentaControllerTestRestTemplateTest.testDetalle(CuentaControllerTestRestTemplateTest.java:90)
+
+testListar  Time elapsed: 0.092 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Andrés> but was: <AndrÃ©s>
+	at com.oscar.test.springboot.app.controllers.CuentaControllerTestRestTemplateTest.testListar(CuentaControllerTestRestTemplateTest.java:106)
+
