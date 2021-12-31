@@ -1,4 +1,3 @@
-com\oscar\test\springboot\app\controllers\CuentaControllerWebTestClientTests.class
 com\oscar\test\springboot\app\controllers\CuentaControllerTest.class
 com\oscar\test\springboot\app\IntegracionJpaTest.class
 com\oscar\test\springboot\app\controllers\CuentaControllerTestRestTemplateTest.class

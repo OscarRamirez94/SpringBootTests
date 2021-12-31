@@ -1,0 +1,6 @@
+projectKey=com.oscar.test.springboot.app:springboot_test
+serverUrl=http://localhost:9000
+serverVersion=9.2.1.49989
+dashboardUrl=http://localhost:9000/dashboard?id=com.oscar.test.springboot.app%3Aspringboot_test
+ceTaskId=AX4O6-hQ19T3x8iSdW_-
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX4O6-hQ19T3x8iSdW_-

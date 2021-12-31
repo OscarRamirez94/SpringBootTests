@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Banco.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springboot_test</a> &gt; <a href="index.source.html" class="el_package">com.oscar.test.springboot.app.models</a> &gt; <span class="el_source">Banco.java</span></div><h1>Banco.java</h1><pre class="source lang-java linenums">package com.oscar.test.springboot.app.models;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name=&quot;bancos&quot;)
+public class Banco {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nombre;
+
+    @Column(name=&quot;total_transferencias&quot;)
+    private int totalTransferencias;
+
+<span class="fc" id="L17">    public Banco() {</span>
+<span class="fc" id="L18">    }</span>
+
+<span class="fc" id="L20">    public Banco(Long id, String nombre, int totalTransferencias) {</span>
+<span class="fc" id="L21">        this.id = id;</span>
+<span class="fc" id="L22">        this.nombre = nombre;</span>
+<span class="fc" id="L23">        this.totalTransferencias = totalTransferencias;</span>
+<span class="fc" id="L24">    }</span>
+
+    public Long getId() {
+<span class="fc" id="L27">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="nc" id="L31">        this.id = id;</span>
+<span class="nc" id="L32">    }</span>
+
+    public String getNombre() {
+<span class="nc" id="L35">        return nombre;</span>
+    }
+
+    public void setNombre(String nombre) {
+<span class="nc" id="L39">        this.nombre = nombre;</span>
+<span class="nc" id="L40">    }</span>
+
+    public int getTotalTransferencias() {
+<span class="fc" id="L43">        return totalTransferencias;</span>
+    }
+
+    public void setTotalTransferencias(int totalTransferencias) {
+<span class="fc" id="L47">        this.totalTransferencias = totalTransferencias;</span>
+<span class="fc" id="L48">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

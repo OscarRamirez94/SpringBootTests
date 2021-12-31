@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Cuenta.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springboot_test</a> &gt; <a href="index.source.html" class="el_package">com.oscar.test.springboot.app.models</a> &gt; <span class="el_source">Cuenta.java</span></div><h1>Cuenta.java</h1><pre class="source lang-java linenums">package com.oscar.test.springboot.app.models;
+
+import com.oscar.test.springboot.app.exceptions.DineroInsuficienteException;
+
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.util.Objects;
+
+@Entity
+@Table(name=&quot;cuentas&quot;)
+public class Cuenta {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String persona;
+    private BigDecimal saldo;
+
+<span class="fc" id="L20">    public Cuenta() {</span>
+<span class="fc" id="L21">    }</span>
+
+<span class="fc" id="L23">    public Cuenta(Long id, String persona, BigDecimal saldo) {</span>
+<span class="fc" id="L24">        this.id = id;</span>
+<span class="fc" id="L25">        this.persona = persona;</span>
+<span class="fc" id="L26">        this.saldo = saldo;</span>
+<span class="fc" id="L27">    }</span>
+
+    public Long getId() {
+<span class="fc" id="L30">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="fc" id="L34">        this.id = id;</span>
+<span class="fc" id="L35">    }</span>
+
+    public String getPersona() {
+<span class="fc" id="L38">        return persona;</span>
+    }
+
+    public void setPersona(String persona) {
+<span class="fc" id="L42">        this.persona = persona;</span>
+<span class="fc" id="L43">    }</span>
+
+    public BigDecimal getSaldo() {
+<span class="fc" id="L46">        return saldo;</span>
+    }
+
+    public void setSaldo(BigDecimal saldo) {
+<span class="fc" id="L50">        this.saldo = saldo;</span>
+<span class="fc" id="L51">    }</span>
+
+    public void debito(BigDecimal monto) {
+<span class="fc" id="L54">        BigDecimal nuevoSaldo = this.saldo.subtract(monto);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if(nuevoSaldo.compareTo(BigDecimal.ZERO) &lt; 0){</span>
+<span class="fc" id="L56">            throw new DineroInsuficienteException(&quot;Dinero insuficiente en la cuenta.&quot;);</span>
+        }
+<span class="fc" id="L58">        this.saldo = nuevoSaldo;</span>
+<span class="fc" id="L59">    }</span>
+
+    public void credito(BigDecimal monto) {
+<span class="fc" id="L62">        this.saldo = saldo.add(monto);</span>
+<span class="fc" id="L63">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="pc bpc" id="L68" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="fc" id="L69">        Cuenta cuenta = (Cuenta) o;</span>
+<span class="pc bpc" id="L70" title="2 of 6 branches missed.">        return Objects.equals(id, cuenta.id) &amp;&amp; Objects.equals(persona, cuenta.persona) &amp;&amp; Objects.equals(saldo, cuenta.saldo);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L75">        return Objects.hash(id, persona, saldo);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
